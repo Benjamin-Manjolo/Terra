@@ -28,10 +28,10 @@ const products = [
 ];
 
 const stats = [
-  { value: "13M+", label: "Customers" },
-  { value: "$20B+", label: "Assets managed" },
-  { value: "4.7★", label: "App Store rating" },
-  { value: "15K+", label: "Earning partners" },
+  { value: "14M+", label: "Customers" },
+  { value: "$30B+", label: "Invested" },
+  { value: "4.7★", label: "App ratings" },
+  { value: "Since 2014", label: "Helping families build wealth" },
 ];
 
 export default function Index() {
@@ -59,11 +59,10 @@ export default function Index() {
             </motion.div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-foreground leading-[1.1] mb-6">
-              Invest, earn &{" "}
-              <span className="text-primary">grow</span> your money
+              Say Hello to Oakly: An automated saving and investing app for you and your family
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
-              The all-in-one savings and investing app that helps you grow your wealth on autopilot — starting with just your spare change.
+              Choose a path designed for you, or tools built to help your whole family build lifelong money habits.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -71,16 +70,23 @@ export default function Index() {
                 to="/pricing"
                 className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-oak-light transition-colors"
               >
-                Start Investing <ArrowRight className="w-4 h-4" />
+                You: Learn more <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/early"
                 className="inline-flex items-center gap-2 rounded-full bg-card text-foreground border border-border px-8 py-4 text-base font-semibold hover:bg-secondary transition-colors"
               >
                 <Users className="w-4 h-4" />
-                For Your Family
+                Your Family: Learn more
               </Link>
             </div>
+
+            <Link
+              to="/pricing"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-6 py-3 text-sm font-semibold hover:bg-primary/20 transition-colors"
+            >
+              Get the app
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -110,9 +116,9 @@ export default function Index() {
       <section className="py-20 md:py-28">
         <div className="container">
           <SectionHeading
-            badge="Products"
-            title="Money tools for every stage of life"
-            subtitle="From investing spare change to planning retirement and teaching your kids about money — we've got you covered."
+            badge="A Better Way to Invest"
+            title="Automated investing, transparent pricing, and security-first design"
+            subtitle="An all-in-one app with expert-built portfolios, no hidden fees, and tools that make long-term investing simple."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
