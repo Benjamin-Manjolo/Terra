@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/early", label: "For Family" },
   { to: "/pricing", label: "Plans & Pricing" },
   { to: "/learn", label: "Learn" },
+  { to: "/support", label: "Support" },
 ];
 
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
             to="/pricing"
             className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-oak-light transition-colors"
           >
-            Get Started
+            Get the app
           </Link>
         </div>
 
@@ -88,7 +89,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold mt-2"
               >
-                Get Started
+                Get the app
               </Link>
             </div>
           </motion.div>

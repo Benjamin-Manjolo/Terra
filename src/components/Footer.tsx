@@ -25,7 +25,7 @@ const footerLinks = [
     links: [
       { label: "Learn", to: "/learn" },
       { label: "Pricing", to: "/pricing" },
-      { label: "Support", to: "/" },
+      { label: "Support", to: "/support" },
       { label: "FAQs", to: "/" },
     ],
   },
