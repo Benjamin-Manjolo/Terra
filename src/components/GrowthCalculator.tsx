@@ -4,17 +4,19 @@ import { motion } from "framer-motion";
 
 export default function GrowthCalculator() {
   const [initial, setInitial] = useState(500);
-  const [monthly, setMonthly] = useState(100);
+  const [contribution, setContribution] = useState(100);
+  const [frequency, setFrequency] = useState<"weekly" | "monthly">("monthly");
   const [years, setYears] = useState(20);
   const [rate, setRate] = useState(7);
 
   const data = useMemo(() => {
     const points = [];
     const r = rate / 100 / 12;
+    const monthlyContribution = frequency === "weekly" ? contribution * 52 / 12 : contribution;
     for (let y = 0; y <= years; y++) {
       const n = y * 12;
-      const fv = initial * Math.pow(1 + r, n) + monthly * ((Math.pow(1 + r, n) - 1) / r);
-      const contributed = initial + monthly * n;
+      const fv = initial * Math.pow(1 + r, n) + monthlyContribution * ((Math.pow(1 + r, n) - 1) / r);
+      const contributed = initial + monthlyContribution * n;
       points.push({
         year: y,
         total: Math.round(fv),
@@ -22,7 +24,7 @@ export default function GrowthCalculator() {
       });
     }
     return points;
-  }, [initial, monthly, years, rate]);
+  }, [initial, contribution, frequency, years, rate]);
 
   const finalValue = data[data.length - 1]?.total || 0;
 
@@ -50,7 +52,29 @@ export default function GrowthCalculator() {
             {/* Controls */}
             <div className="space-y-6">
               <SliderInput label="Initial Deposit" value={initial} onChange={setInitial} min={0} max={50000} step={100} format={formatCurrency} />
-              <SliderInput label="Monthly Contribution" value={monthly} onChange={setMonthly} min={0} max={2000} step={10} format={formatCurrency} />
+              <SliderInput label={frequency === "weekly" ? "Weekly Contribution" : "Monthly Contribution"} value={contribution} onChange={setContribution} min={0} max={2000} step={10} format={formatCurrency} />
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-sm text-muted-foreground">Contribution Frequency</span>
+                  <span className="text-sm font-semibold text-foreground capitalize">{frequency}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {(["weekly", "monthly"] as const).map((value) => (
+                    <button
+                      key={value}
+                      type="button"
+                      onClick={() => setFrequency(value)}
+                      className={`rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+                        frequency === value
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border text-foreground hover:bg-secondary"
+                      }`}
+                    >
+                      {value[0].toUpperCase() + value.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </div>
               <SliderInput label="Time (Years)" value={years} onChange={setYears} min={1} max={40} step={1} format={(v) => `${v} yrs`} />
               <SliderInput label="Expected Return" value={rate} onChange={setRate} min={1} max={15} step={0.5} format={(v) => `${v}%`} />
 
