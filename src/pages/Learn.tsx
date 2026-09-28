@@ -4,25 +4,23 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 
 const articles = [
-  { title: "What is Compound Interest?", category: "Investing 101", readTime: "4 min", excerpt: "Learn how your money can grow exponentially over time through the power of compounding." },
-  { title: "How to Start Investing with $5", category: "Getting Started", readTime: "3 min", excerpt: "You don't need thousands to begin. Here's how micro-investing can build real wealth." },
-  { title: "Round-Ups: Your Secret Weapon", category: "Features", readTime: "5 min", excerpt: "How spare change investing turns everyday purchases into long-term investments." },
-  { title: "Roth IRA vs Traditional IRA", category: "Retirement", readTime: "6 min", excerpt: "Understanding the key differences to choose the right retirement account for you." },
-  { title: "Teaching Kids About Money", category: "Family", readTime: "4 min", excerpt: "Age-appropriate strategies to help your children develop healthy financial habits." },
-  { title: "Building an Emergency Fund", category: "Savings", readTime: "3 min", excerpt: "Why you need 3-6 months of expenses saved, and the easiest way to get there." },
-  { title: "Understanding ETFs", category: "Investing 101", readTime: "5 min", excerpt: "Exchange-traded funds explained simply — what they are and why they matter." },
-  { title: "Automating Your Finances", category: "Tips", readTime: "4 min", excerpt: "Set up systems that save, invest, and pay bills without you lifting a finger." },
-  { title: "The Cost of Waiting to Invest", category: "Investing 101", readTime: "3 min", excerpt: "See how even a few years of delay can cost you tens of thousands in potential growth." },
+  { title: "Identifying Lumpy Skin Disease in Cattle", category: "Livestock Health", readTime: "5 min", excerpt: "Spot the early signs of lumpy skin disease on your herd and know what to do before a vet arrives." },
+  { title: "Foot and Mouth Disease: First-Aid Steps", category: "Livestock Health", readTime: "4 min", excerpt: "Symptoms, precautions, and first-aid actions for FMD — the treatment guide that works offline." },
+  { title: "Treating Mastitis Without a Vet", category: "Livestock Health", readTime: "6 min", excerpt: "Practical steps to manage mastitis with what you have on hand, and when to call an emergency contact." },
+  { title: "A Guide to Anthrax Prevention", category: "Animal Health", readTime: "5 min", excerpt: "Human safety first. Understand anthrax risks and the safeguards to protect your family and herd." },
+  { title: "Getting Started with Drought-Resistant Crops", category: "Crops", readTime: "6 min", excerpt: "Choose resilient crops and practices suited to districts with unreliable rainfall." },
+  { title: "Value-Added Processing for Smallholders", category: "Agribusiness", readTime: "7 min", excerpt: "Turn raw produce into higher-value goods and earn more from every harvest." },
+  { title: "Pricing Your Livestock for the Marketplace", category: "Agribusiness", readTime: "4 min", excerpt: "Set fair prices that get you paid — and keep your buyers coming back." },
+  { title: "Building a Trust Score as a Seller", category: "Marketplace", readTime: "3 min", excerpt: "How every escrow-protected transaction boosts your reputation on Terra's marketplace." },
+  { title: "Agripreneur Business Ideas in Malawi", category: "Agribusiness", readTime: "8 min", excerpt: "Low-capital ideas to go from subsistence to commercial farming, aligned with Malawi 2063." },
 ];
 
 const categoryColors: Record<string, string> = {
-  "Investing 101": "bg-primary/10 text-primary",
-  "Getting Started": "bg-accent/10 text-accent",
-  Features: "bg-oak-light/10 text-oak-light",
-  Retirement: "bg-gold/10 text-gold",
-  Family: "bg-primary/10 text-primary",
-  Savings: "bg-accent/10 text-accent",
-  Tips: "bg-oak-light/10 text-oak-light",
+  "Livestock Health": "bg-primary/10 text-primary",
+  "Animal Health": "bg-terra-light/10 text-terra-light",
+  Crops: "bg-accent/10 text-accent",
+  Agribusiness: "bg-leaf/10 text-leaf",
+  Marketplace: "bg-terra-light/10 text-terra-light",
 };
 
 export default function Learn() {
@@ -33,8 +31,8 @@ export default function Learn() {
         <div className="container">
           <SectionHeading
             badge="Learn"
-            title="Financial knowledge, simplified"
-            subtitle="Articles, guides, and tips to help you make smarter money decisions."
+            title="Field knowledge, simplified"
+            subtitle="Guides, manuals, and tips that work even in the middle of a village — downloadable for offline use."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((a, i) => (

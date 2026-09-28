@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingUp, RefreshCw, PieChart, Zap, ArrowRight } from "lucide-react";
+import { Scan, WifiOff, Clock, Stethoscope, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,10 +7,10 @@ import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
 
 const features = [
-  { icon: RefreshCw, title: "Round-Ups® Investing", description: "Connect your card and we'll round up every purchase to the nearest dollar, investing the spare change automatically." },
-  { icon: PieChart, title: "Diversified Portfolios", description: "Expert-built portfolios of ETFs spanning thousands of stocks and bonds — diversified from day one." },
-  { icon: Zap, title: "Automated Recurring", description: "Set it and forget it. Invest daily, weekly, or monthly on your schedule with automatic transfers." },
-  { icon: TrendingUp, title: "Custom Portfolios", description: "Gold members can build custom portfolios from a curated list of ETFs to match their values and goals." },
+  { icon: Scan, title: "Breed & disease detection", description: "Photograph your cattle and get a breed ID and disease diagnosis in under 5 seconds — powered by on-device TensorFlow Lite models." },
+  { icon: WifiOff, title: "Truly offline", description: "No signal? No problem. Everything runs on your phone and works in the middle of a village with zero internet." },
+  { icon: Clock, title: "Answers in seconds", description: "Get results the moment you point the camera, with a Roboflow-hosted model for even higher accuracy when you're online." },
+  { icon: Stethoscope, title: "Vet-ready insights", description: "Share the diagnosis with a vet or agronomist for confirmation, and keep a record of every animal you scan." },
 ];
 
 export default function Invest() {
@@ -26,19 +26,21 @@ export default function Invest() {
             className="max-w-2xl"
           >
             <span className="inline-block text-xs font-semibold tracking-wider uppercase text-accent bg-accent/10 px-4 py-1.5 rounded-full mb-4">
-              Oakly Invest
+              Terra Scan
             </span>
             <h1 className="text-4xl md:text-6xl font-display text-foreground leading-[1.1] mb-6">
-              Investing made <span className="text-primary">effortless</span>
+              Diagnose your livestock <span className="text-primary">in seconds</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Turn everyday purchases into investments. Our automated portfolios do the heavy lifting so you can focus on living your life.
+              Take a photo of your cow and get a breed identification and disease diagnosis in under 5 seconds —
+              entirely offline, right on your phone.
             </p>
+            {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
             <Link
-              to="/pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-semibold hover:bg-oak-light transition-colors"
+              to="#"
+              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-semibold hover:bg-terra-light transition-colors"
             >
-              Start Investing <ArrowRight className="w-4 h-4" />
+              Get the app <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
@@ -46,7 +48,7 @@ export default function Invest() {
 
       <section className="py-20 md:py-28">
         <div className="container">
-          <SectionHeading title="How Oakly Invest works" subtitle="Smart, diversified investing with features designed for everyone." />
+          <SectionHeading title="How Terra Scan works" subtitle="Fast, private, and reliable detection built for the field." />
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {features.map((f, i) => (
               <FeatureCard key={f.title} {...f} index={i} />

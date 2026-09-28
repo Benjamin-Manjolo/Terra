@@ -3,10 +3,11 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 
 const faqs = [
-  "How Round-Ups and recurring investments work",
-  "How to link your bank and set Smart Deposit",
-  "Understanding subscriptions, billing, and fee transparency",
-  "SIPC and FDIC coverage details",
+  "How on-device breed and disease detection works, with no internet",
+  "How escrow-protected payments keep your marketplace trades safe",
+  "How to report a disease outbreak in your district",
+  "Understanding Chichewa and English language settings",
+  "How to connect with a verified vet or agronomist",
   "How to contact support 24/7",
 ];
 

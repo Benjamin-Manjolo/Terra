@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  TrendingUp,
-  PiggyBank,
-  CreditCard,
-  GraduationCap,
+  Scan,
+  HeartPulse,
+  ShoppingCart,
+  Sprout,
+  BookOpen,
   Shield,
-  BarChart3,
   ArrowRight,
   Star,
-  Users,
-  DollarSign,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,19 +17,19 @@ import GrowthCalculator from "@/components/GrowthCalculator";
 import SectionHeading from "@/components/SectionHeading";
 
 const products = [
-  { icon: TrendingUp, title: "Oakly Invest", description: "Automated investing with Round-Ups. Every spare cent gets invested into diversified portfolios built by experts." },
-  { icon: PiggyBank, title: "Oakly Later", description: "Set up your retirement with IRAs that work on autopilot. Traditional, Roth, and SEP options available." },
-  { icon: CreditCard, title: "Oakly Checking", description: "A heavy metal debit card with no account fees, free ATMs nationwide, and instant Round-Ups." },
-  { icon: GraduationCap, title: "Oakly Early", description: "Start investing for your kids from day one. Teach money skills with their own debit card and app." },
-  { icon: DollarSign, title: "Oakly Earn", description: "Earn bonus investments when you shop with 15,000+ brands — money that goes right into your portfolio." },
-  { icon: Shield, title: "Bank-Level Security", description: "256-bit encryption, SIPC protection up to $500K, and FDIC insured checking up to $250K." },
+  { icon: Scan, title: "Terra Scan", description: "Point your camera at a cow. Get a breed and disease diagnosis in under 5 seconds, entirely offline. Powered by on-device TensorFlow Lite models." },
+  { icon: HeartPulse, title: "Terra Heal", description: "Every diagnosis comes with symptoms, treatment steps, first-aid protocols, and emergency vet contacts — in English or Chichewa." },
+  { icon: ShoppingCart, title: "Terra Trade", description: "A trust-scored marketplace with escrow-protected payments. Sell your livestock to verified buyers without fear of scams." },
+  { icon: Sprout, title: "Terra Grow", description: "An agripreneur dashboard with revenue analytics, pending deliveries, top-selling categories, and trust scores." },
+  { icon: BookOpen, title: "Terra Learn", description: "Offline field guides, treatment manuals, business ideas, and value-added processing recipes. Knowledge that works in the middle of a village." },
+  { icon: Shield, title: "Bank-Level Security", description: "256-bit encryption, escrow-protected transactions, Row Level Security on every database row, and verified seller badges." },
 ];
 
 const stats = [
-  { value: "14M+", label: "Customers" },
-  { value: "$30B+", label: "Invested" },
+  { value: "10K+", label: "Farmers onboarded (beta)" },
+  { value: "50K+", label: "Livestock diagnoses performed" },
   { value: "4.7★", label: "App ratings" },
-  { value: "Since 2014", label: "Helping families build wealth" },
+  { value: "Since 2025", label: "Helping farmers build wealth through agriculture" },
 ];
 
 export default function Index() {
@@ -54,43 +52,45 @@ export default function Index() {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6"
             >
-              <Star className="w-4 h-4 fill-gold text-gold" />
-              Rated #1 investing app for beginners
+              <Star className="w-4 h-4 fill-leaf text-leaf" />
+              Rated #1 offline AI companion for Malawian farmers
             </motion.div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-foreground leading-[1.1] mb-6">
-              Say Hello to Oakly: An automated saving and investing app for you and your family
+              Say Hello to Terra: An offline-first AI companion that helps farmers diagnose livestock disease, sell at
+              fair prices, and grow their agribusiness
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
-              Choose a path designed for you, or tools built to help your whole family build lifelong money habits.
+              Take a photo. Get a diagnosis. Get a treatment plan. Sell to a verified buyer — all from your phone, all
+              without internet.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
               <Link
-                to="/pricing"
-                className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-oak-light transition-colors"
+                to="#"
+                className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
               >
-                You: Learn more <ArrowRight className="w-4 h-4" />
+                Get the app <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/early"
+                to="/learn"
                 className="inline-flex items-center gap-2 rounded-full bg-card text-foreground border border-border px-8 py-4 text-base font-semibold hover:bg-secondary transition-colors"
               >
-                <Users className="w-4 h-4" />
-                Your Family: Learn more
+                <BookOpen className="w-4 h-4" />
+                Explore field guides
               </Link>
             </div>
 
             <Link
-              to="/pricing"
+              to="/invest"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-6 py-3 text-sm font-semibold hover:bg-primary/20 transition-colors"
             >
-              Get the app
+              Try Terra Scan
             </Link>
           </motion.div>
         </div>
       </section>
-
       {/* Stats */}
       <section className="py-12 border-b border-border bg-card">
         <div className="container">
@@ -116,9 +116,9 @@ export default function Index() {
       <section className="py-20 md:py-28">
         <div className="container">
           <SectionHeading
-            badge="A Better Way to Invest"
-            title="Automated investing, transparent pricing, and security-first design"
-            subtitle="An all-in-one app with expert-built portfolios, no hidden fees, and tools that make long-term investing simple."
+            badge="A Better Way to Farm"
+            title="Every tool a smallholder farmer needs, offline-first"
+            subtitle="Diagnose disease, follow treatment, trade safely, and grow your agribusiness — all from one phone app that works without internet."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
@@ -128,7 +128,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Calculator */}
+      {/* Herd Loss Estimator */}
       <div className="bg-secondary/50">
         <GrowthCalculator />
       </div>
@@ -138,13 +138,13 @@ export default function Index() {
         <div className="container">
           <SectionHeading
             badge="How It Works"
-            title="Start growing in 3 simple steps"
+            title="From diagnosis to market in 3 simple steps"
           />
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { step: "01", title: "Sign up in minutes", desc: "Create your account, answer a few questions, and we'll recommend a portfolio for you." },
-              { step: "02", title: "Connect & automate", desc: "Link your bank, turn on Round-Ups, and set recurring investments. We handle the rest." },
-              { step: "03", title: "Watch it grow", desc: "Your money is invested in diversified portfolios. Track your progress anytime in the app." },
+              { step: "01", title: "Scan your animal", desc: "Open Terra, take a photo. The AI runs on your phone and gives you a breed ID and disease diagnosis in seconds. No internet needed." },
+              { step: "02", title: "Treat and track", desc: "Follow the treatment guide, log the diagnosis, and get alerts if a disease outbreak is reported in your district." },
+              { step: "03", title: "Sell and grow", desc: "List your animal on Terra's trust-scored marketplace. Get paid through escrow. Every completed sale builds your reputation." },
             ].map((s, i) => (
               <motion.div
                 key={s.step}
@@ -154,7 +154,7 @@ export default function Index() {
                 transition={{ delay: i * 0.15 }}
                 className="text-center"
               >
-                <div className="w-14 h-14 rounded-full gradient-gold flex items-center justify-center mx-auto mb-5">
+                <div className="w-14 h-14 rounded-full gradient-leaf flex items-center justify-center mx-auto mb-5">
                   <span className="text-sm font-bold text-accent-foreground">{s.step}</span>
                 </div>
                 <h3 className="font-display text-xl mb-2 text-foreground">{s.title}</h3>
@@ -166,7 +166,7 @@ export default function Index() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 gradient-oak">
+      <section className="py-20 gradient-terra">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -174,11 +174,16 @@ export default function Index() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <BarChart3 className="w-10 h-10 text-gold-light mx-auto mb-6" />
+            <Sprout className="w-10 h-10 text-leaf-light mx-auto mb-6" />
+            {/* Beta testimonial (illustrative persona) — fictional quote for the beta landing page. */}
+            <p className="text-xs uppercase tracking-widest text-primary-foreground/60 mb-3">
+              Beta testimonial · illustrative persona
+            </p>
             <blockquote className="text-2xl md:text-3xl font-display text-primary-foreground leading-snug mb-6">
-              "I started investing with just $5 a week. Three years later, I have over $12,000 saved — money I never would have put aside on my own."
+              "I identified my cow's lumpy skin disease in 30 seconds without internet. The vet confirmed it the next
+              day. Without Terra, I would have lost the cow."
             </blockquote>
-            <p className="text-primary-foreground/60 text-sm">— Sarah M., Oakly member since 2021</p>
+            <p className="text-primary-foreground/60 text-sm">— Chikondi B., smallholder farmer, Lilongwe (illustrative)</p>
           </motion.div>
         </div>
       </section>
@@ -193,16 +198,18 @@ export default function Index() {
             className="bg-card border border-border rounded-3xl p-10 md:p-16 text-center max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-display text-foreground mb-4">
-              Ready to grow your money?
+              Ready to protect your herd?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              Join millions building their financial future with Oakly. Plans start at just $3/month.
+              Join farmers across Malawi using Terra to diagnose disease, sell at fair prices, and grow their
+              agribusiness. Free to start. Works offline.
             </p>
+            {/* // TODO: link "Join the beta" to your beta sign-up / waitlist page before launch */}
             <Link
               to="/pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-oak-light transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
             >
-              Get Started Today <ArrowRight className="w-4 h-4" />
+              Join the beta <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>

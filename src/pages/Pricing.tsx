@@ -5,41 +5,45 @@ import SectionHeading from "@/components/SectionHeading";
 
 const plans = [
   {
-    name: "Bronze",
-    price: 3,
-    description: "Start investing with ease",
+    name: "Free",
+    price: 0,
+    currency: "MK ",
+    description: "Start protecting your herd today",
     features: [
-      "Automated investing",
-      "Round-Ups® investing",
-      "Bonus investments (Earn)",
-      "Financial literacy articles",
-      "Banking account",
+      "On-device breed & disease scans",
+      "Core treatment guides & first-aid",
+      "District outbreak alerts",
+      "Community groups",
+      "Offline field guide library",
     ],
   },
   {
-    name: "Silver",
-    price: 6,
-    description: "Plan for your future",
+    name: "Farmer",
+    price: 2000,
+    currency: "MK ",
+    description: "Sell and earn with confidence",
     features: [
-      "Everything in Bronze",
-      "Retirement account (IRA)",
-      "Earn match — 3% IRA match",
-      "Emergency fund",
+      "Everything in Free",
+      "Full marketplace listing access",
+      "Escrow-protected payments",
+      "Trust score building",
+      "Revenue analytics dashboard",
       "Priority support",
     ],
     highlighted: true,
   },
   {
-    name: "Gold",
-    price: 12,
-    description: "Invest for the whole family",
+    name: "Co-op",
+    price: 5000,
+    currency: "MK ",
+    description: "Grow your whole agribusiness",
     features: [
-      "Everything in Silver",
-      "Invest for kids (Oakly Early)",
-      "Kids debit card",
-      "Custom portfolios",
-      "Live Q&A with experts",
-      "Will & trust creation",
+      "Everything in Farmer",
+      "Unlimited listings & bulk sales",
+      "Top categories & insights",
+      "Vet & agronomist consultations",
+      "Community polls & elections",
+      "Value-added processing guides",
     ],
   },
 ];
@@ -53,7 +57,7 @@ export default function Pricing() {
           <SectionHeading
             badge="Plans & Pricing"
             title="Simple, transparent pricing"
-            subtitle="Choose the plan that fits your financial goals. All plans include investing and banking."
+            subtitle="Free to start and works offline. Upgrade as your agribusiness grows."
           />
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {plans.map((p, i) => (

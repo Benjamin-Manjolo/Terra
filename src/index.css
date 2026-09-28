@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 150 30% 10%;
 
-    --primary: 145 60% 22%;
+    --primary: 120 100% 33%;
     --primary-foreground: 40 33% 98%;
 
-    --secondary: 40 50% 95%;
+    --secondary: 123 13% 69%;
     --secondary-foreground: 150 30% 10%;
 
     --muted: 40 20% 94%;
     --muted-foreground: 150 10% 45%;
 
-    --accent: 36 72% 48%;
+    --accent: 120 100% 33%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,15 +32,15 @@
 
     --border: 40 20% 90%;
     --input: 40 20% 88%;
-    --ring: 145 60% 22%;
+    --ring: 120 100% 33%;
 
     --radius: 0.75rem;
 
-    --oak: 145 60% 22%;
-    --oak-light: 145 40% 35%;
-    --oak-dark: 145 70% 14%;
-    --gold: 36 72% 48%;
-    --gold-light: 38 80% 65%;
+    --terra: 120 100% 33%;
+    --terra-light: 123 13% 69%;
+    --terra-dark: 120 45% 22%;
+    --leaf: 120 100% 33%;
+    --leaf-light: 123 13% 69%;
     --cream: 40 33% 96%;
     --cream-dark: 40 20% 92%;
     --forest: 150 30% 10%;
@@ -72,11 +72,11 @@
   .text-balance {
     text-wrap: balance;
   }
-  .gradient-oak {
-    background: linear-gradient(135deg, hsl(var(--oak)) 0%, hsl(var(--oak-light)) 100%);
+  .gradient-terra {
+    background: linear-gradient(135deg, hsl(var(--terra)) 0%, hsl(var(--terra-light)) 100%);
   }
-  .gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+  .gradient-leaf {
+    background: linear-gradient(135deg, hsl(var(--leaf)) 0%, hsl(var(--leaf-light)) 100%);
   }
   .gradient-hero {
     background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--cream-dark)) 100%);

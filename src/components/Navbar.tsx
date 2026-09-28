@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, TreePine } from "lucide-react";
+import { Menu, X, Leaf } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/invest", label: "Invest" },
-  { to: "/early", label: "For Family" },
+  { to: "/invest", label: "Scan" },
+  { to: "/early", label: "Grow" },
   { to: "/pricing", label: "Plans & Pricing" },
   { to: "/learn", label: "Learn" },
   { to: "/support", label: "Support" },
@@ -20,8 +20,8 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2 text-primary font-display text-2xl">
-          <TreePine className="w-7 h-7" />
-          Oakly
+          <Leaf className="w-7 h-7" />
+          Terra
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -39,15 +39,17 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          {/* // TODO: replace with a real sign-in URL once the web portal exists */}
           <Link
-            to="/pricing"
-            className="text-sm font-medium text-primary hover:text-oak-light transition-colors"
+            to="#"
+            className="text-sm font-medium text-primary hover:text-terra-light transition-colors"
           >
-            Log In
+            Sign in
           </Link>
+          {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
           <Link
-            to="/pricing"
-            className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-oak-light transition-colors"
+            to="#"
+            className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-terra-light transition-colors"
           >
             Get the app
           </Link>
@@ -84,8 +86,9 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
+              {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
               <Link
-                to="/pricing"
+                to="#"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold mt-2"
               >

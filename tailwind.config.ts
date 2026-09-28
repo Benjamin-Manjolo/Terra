@@ -51,14 +51,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        oak: {
-          DEFAULT: "hsl(var(--oak))",
-          light: "hsl(var(--oak-light))",
-          dark: "hsl(var(--oak-dark))",
+        terra: {
+          DEFAULT: "hsl(var(--terra))",
+          light: "hsl(var(--terra-light))",
+          dark: "hsl(var(--terra-dark))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
+        leaf: {
+          DEFAULT: "hsl(var(--leaf))",
+          light: "hsl(var(--leaf-light))",
         },
         cream: {
           DEFAULT: "hsl(var(--cream))",

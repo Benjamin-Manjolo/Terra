@@ -17,7 +17,7 @@ export default function FeatureCard({ icon: Icon, title, description, index = 0 
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow group"
     >
-      <div className="w-12 h-12 rounded-xl gradient-oak flex items-center justify-center mb-5">
+      <div className="w-12 h-12 rounded-xl gradient-terra flex items-center justify-center mb-5">
         <Icon className="w-6 h-6 text-primary-foreground" />
       </div>
       <h3 className="font-display text-xl mb-3 text-foreground">{title}</h3>
