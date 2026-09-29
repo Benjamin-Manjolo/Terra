@@ -9,6 +9,7 @@ import Invest from "./pages/Invest.tsx";
 import Early from "./pages/Early.tsx";
 import Learn from "./pages/Learn.tsx";
 import Support from "./pages/Support.tsx";
+import Download from "./pages/Download.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/early" element={<Early />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/download" element={<Download />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
