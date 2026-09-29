@@ -1,10 +1,14 @@
 import {
   ArrowRight,
+  CalendarDays,
   Check,
   Cpu,
   Database,
   Download as DownloadIcon,
+  HardDrive,
+  MemoryStick,
   Smartphone,
+  TriangleAlert,
   WifiOff,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -18,24 +22,54 @@ const RELEASE_DOWNLOAD_URL = "https://github.com/Benjamin-Manjolo/Terra/releases
 const apkBuilds = [
   {
     id: "arm64-v8a",
-    name: "ARM64 (recommended)",
+    name: "ARM64 — most phones",
     icon: Smartphone,
     version: "v1.0.1",
-    size: "54.8 MB",
+    size: "56 MB",
     requirements: "Android 6.0+ (Marshmallow)",
-    note: "For most modern Android phones. This is the right choice for nearly every phone made in recent years.",
+    bestFor: "Choose this first. It works on almost every Android phone made from 2015 onward.",
+    coverage: "Works on about 95% of Android phones in use today.",
+    specs: [
+      { icon: Cpu, label: "Phone processor", value: "64-bit ARM (ARM64 / arm64-v8a / aarch64)" },
+      { icon: MemoryStick, label: "Memory", value: "2 GB minimum · 4 GB+ recommended" },
+      { icon: HardDrive, label: "Free storage", value: "150 MB" },
+      { icon: CalendarDays, label: "Typical phone age", value: "2015 or newer" },
+    ],
+    examples: [
+      "Samsung Galaxy A, J, S, M, and F series from 2016+",
+      "Tecno Spark 4+, Camon 12+, and most Tecno Pop phones",
+      "Infinix Hot, Note, Zero, and Smart series",
+      "Itel A, P, S, and Vision phones from 2020+",
+      "Redmi, Poco, Oppo A, Vivo Y, Huawei, Nokia, and every Google Pixel",
+    ],
+    notFor: "Very old phones and a small number of ultra-budget Android Go phones with 32-bit processors.",
     fileName: "app-arm64-v8a-release.apk",
     href: `${RELEASE_DOWNLOAD_URL}/app-arm64-v8a-release.apk`,
     recommended: true,
   },
   {
     id: "armeabi-v7a",
-    name: "32-bit ARM",
+    name: "32-bit ARM — older phones",
     icon: Cpu,
     version: "v1.0.1",
-    size: "50.7 MB",
+    size: "52 MB",
     requirements: "Android 6.0+ (Marshmallow)",
-    note: "For older or entry-level Android phones that use a 32-bit ARM processor.",
+    bestFor: "Choose this only if the ARM64 download does not install, or if your phone is an older Android Go or budget model.",
+    coverage: "Made for 32-bit phones, including some Android Go devices.",
+    specs: [
+      { icon: Cpu, label: "Phone processor", value: "32-bit ARM (ARMv7 / armeabi-v7a / aarch32)" },
+      { icon: MemoryStick, label: "Memory", value: "1 GB minimum · 2 GB recommended" },
+      { icon: HardDrive, label: "Free storage", value: "150 MB" },
+      { icon: CalendarDays, label: "Typical phone age", value: "2013 or newer" },
+    ],
+    examples: [
+      "Android Go: Tecno Pop 2F/3/4/5/6 Go and Itel A23/A25/A27/A36/A48",
+      "Samsung Galaxy J1, J2 Core, J2 Prime, A2 Core, Grand Prime, and Core Prime",
+      "Samsung Galaxy S4/S5, Note 3/4, and 2014–15 Galaxy A phones",
+      "Older HTC One, LG G2/G3/G4, and Sony Xperia Z phones",
+      "Some very low-cost, unbranded Android Go phones",
+    ],
+    notFor: "Most phones released since 2016. Use the ARM64 download above unless you know your phone is 32-bit.",
     fileName: "app-armeabi-v7a-release.apk",
     href: `${RELEASE_DOWNLOAD_URL}/app-armeabi-v7a-release.apk`,
     recommended: false,
@@ -108,57 +142,54 @@ export default function Download() {
         <div className="container">
           <SectionHeading
             badge="Choose your APK"
-            title="Know which download your Android needs"
-            subtitle="Every build requires Android 6.0 (Marshmallow) or newer. Start with ARM64 unless you know your phone is an older 32-bit model."
+            title="Choose the right download for your phone"
+            subtitle="Both versions need Android 6.0 (Marshmallow) or newer. The green ARM64 option is right for most people."
           />
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-7 max-w-6xl mx-auto">
             {apkBuilds.map((p) => {
               return (
                 <div
                   key={p.id}
-                  className={`bg-card rounded-2xl p-8 border border-border flex flex-col transition-shadow hover:shadow-lg ${p.recommended ? "ring-2 ring-leaf shadow-xl" : ""}`}
+                  className={`rounded-3xl p-1 ${p.recommended ? "bg-primary shadow-xl shadow-primary/15" : "bg-border shadow-lg"}`}
                 >
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl gradient-terra flex items-center justify-center">
-                      <p.icon className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div className="flex items-center">
-                      {p.recommended && (
-                        <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
-                          Recommended
+                  <article className="h-full rounded-[1.35rem] bg-card p-6 md:p-8 flex flex-col">
+                    <div className="flex items-start justify-between gap-4 mb-5">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${p.recommended ? "gradient-terra" : "bg-secondary"}`}>
+                        <p.icon className={`w-6 h-6 ${p.recommended ? "text-primary-foreground" : "text-secondary-foreground"}`} />
+                      </div>
+                      {p.recommended ? (
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+                          <Check className="w-3.5 h-3.5" /> Start here
                         </span>
+                      ) : (
+                        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground bg-muted px-3 py-1.5 rounded-full">Older phones</span>
                       )}
                     </div>
-                  </div>
-                  <h3 className="font-display text-2xl text-foreground mb-1">{p.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{p.note}</p>
-                  <dl className="space-y-2.5 mb-8 text-sm">
-                    <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">Version</dt>
-                      <dd className="font-semibold text-foreground">{p.version}</dd>
+                    <h3 className="font-display text-2xl text-foreground mb-2">{p.name}</h3>
+                    <p className="text-sm font-medium text-foreground leading-relaxed mb-2">{p.bestFor}</p>
+                    <p className="text-sm text-primary font-semibold mb-6">{p.coverage}</p>
+
+                    <div className="rounded-2xl bg-muted/70 p-4 mb-5">
+                      <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">This APK needs</p>
+                      <dl className="space-y-3 text-sm">
+                        <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Android version</dt><dd className="font-semibold text-right">{p.requirements}</dd></div>
+                        {p.specs.map((spec) => <div key={spec.label} className="flex gap-2.5"><spec.icon className="w-4 h-4 text-primary shrink-0 mt-0.5" /><div><dt className="text-muted-foreground">{spec.label}</dt><dd className="font-semibold text-foreground leading-snug">{spec.value}</dd></div></div>)}
+                      </dl>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">Size</dt>
-                      <dd className="font-semibold text-foreground">{p.size}</dd>
+
+                    <div className="mb-6">
+                      <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Common phone examples</p>
+                      <ul className="space-y-2">
+                        {p.examples.map((example) => <li key={example} className="flex gap-2 text-sm text-muted-foreground leading-snug"><Check className="w-4 h-4 shrink-0 text-primary mt-0.5" />{example}</li>)}
+                      </ul>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">Requires</dt>
-                      <dd className="font-semibold text-foreground">{p.requirements}</dd>
-                    </div>
-                    {p.fileName && (
-                      <div className="pt-2 border-t border-border">
-                        <dt className="text-muted-foreground mb-1">APK file</dt>
-                        <dd className="font-mono text-xs text-foreground break-all">{p.fileName}</dd>
-                      </div>
-                    )}
-                  </dl>
-                  <a
-                    href={p.href}
-                    download={p.fileName}
-                    className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors mt-auto bg-primary text-primary-foreground hover:bg-terra-light"
-                  >
-                    <DownloadIcon className="w-4 h-4" /> Download APK
-                  </a>
+
+                    <p className="flex gap-2 rounded-xl bg-secondary/40 p-3 text-xs text-foreground leading-relaxed mb-6"><TriangleAlert className="w-4 h-4 shrink-0 mt-0.5 text-primary" />{p.notFor}</p>
+                    <p className="font-mono text-xs text-muted-foreground break-all mb-3">{p.fileName} · {p.size}</p>
+                    <a href={p.href} download={p.fileName} className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-colors mt-auto bg-primary text-primary-foreground hover:bg-terra-light">
+                      <DownloadIcon className="w-4 h-4" /> Download {p.name}
+                    </a>
+                  </article>
                 </div>
               );
             })}
