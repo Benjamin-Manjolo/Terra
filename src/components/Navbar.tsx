@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Leaf } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -57,39 +56,31 @@ export default function Navbar() {
         </button>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-card border-b border-border"
-          >
-            <div className="container py-4 flex flex-col gap-3">
-              {navLinks.map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  onClick={() => setOpen(false)}
-                  className={`text-base font-medium py-2 ${
-                    location.pathname === l.to ? "text-primary" : "text-muted-foreground"
-                  }`}
-                >
-                  {l.label}
-                </Link>
-              ))}
+      {open && (
+        <div className="md:hidden bg-card border-b border-border">
+          <div className="container py-4 flex flex-col gap-3">
+            {navLinks.map((l) => (
               <Link
-                to="/download"
+                key={l.to}
+                to={l.to}
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold mt-2"
+                className={`text-base font-medium py-2 ${
+                  location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                }`}
               >
-                Get the app
+                {l.label}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <Link
+              to="/download"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold mt-2"
+            >
+              Get the app
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
