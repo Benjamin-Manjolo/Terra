@@ -4,17 +4,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import Download from "./pages/Download.tsx";
 
 // Keep route code out of the initial bundle. In particular, the home page's
-// charting dependency is expensive on lower-powered phones and was making
-// navigation to Download feel like the tab had frozen.
+// charting dependency is expensive on lower-powered phones. Download is
+// deliberately eager so its primary route can never remain in the Suspense
+// loading state while a split chunk is being fetched.
 const Index = lazy(() => import("./pages/Index.tsx"));
 const Pricing = lazy(() => import("./pages/Pricing.tsx"));
 const Invest = lazy(() => import("./pages/Invest.tsx"));
 const Early = lazy(() => import("./pages/Early.tsx"));
 const Learn = lazy(() => import("./pages/Learn.tsx"));
 const Support = lazy(() => import("./pages/Support.tsx"));
-const Download = lazy(() => import("./pages/Download.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
