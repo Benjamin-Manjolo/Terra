@@ -25,13 +25,6 @@ const products = [
   { icon: Shield, title: "Bank-Level Security", description: "256-bit encryption, escrow-protected transactions, Row Level Security on every database row, and verified seller badges." },
 ];
 
-const stats = [
-  { value: "10K+", label: "Farmers onboarded (beta)" },
-  { value: "50K+", label: "Livestock diagnoses performed" },
-  { value: "4.7★", label: "App ratings" },
-  { value: "Since 2025", label: "Helping farmers build wealth through agriculture" },
-];
-
 export default function Index() {
   return (
     <div className="min-h-screen">
@@ -89,27 +82,6 @@ export default function Index() {
           </motion.div>
         </div>
       </section>
-      {/* Stats */}
-      <section className="py-12 border-b border-border bg-card">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-2xl md:text-3xl font-bold text-primary">{s.value}</p>
-                <p className="text-sm text-muted-foreground mt-1">{s.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Products */}
       <section className="py-20 md:py-28">
         <div className="container">

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Leaf } from "lucide-react";
 
 const footerLinks = [
   {
@@ -47,10 +46,7 @@ export default function Footer() {
       <div className="container py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 font-display text-2xl mb-4">
-              <Leaf className="w-6 h-6" />
-              Terra
-            </Link>
+            <Link to="/" className="font-display text-2xl mb-4 inline-block">Terra</Link>
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
               Diagnose, treat, sell, and grow, all from your phone, all without internet.
             </p>
