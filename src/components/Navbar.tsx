@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -19,10 +19,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 text-primary font-display text-2xl">
-          <Leaf className="w-7 h-7" />
-          Terra
-        </Link>
+        <Link to="/" className="text-primary font-display text-2xl">Terra</Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
