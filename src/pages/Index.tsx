@@ -66,14 +66,12 @@ export default function Index() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/download"
                 className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
               >
                 Get the app <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
               <Link
                 to="/learn"
                 className="inline-flex items-center gap-2 rounded-full bg-card text-foreground border border-border px-8 py-4 text-base font-semibold hover:bg-secondary transition-colors"

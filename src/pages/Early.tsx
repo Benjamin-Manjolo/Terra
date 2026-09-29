@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart3, Store, ShieldCheck, MessageSquare, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
@@ -34,14 +35,12 @@ export default function Early() {
               A dashboard for agripreneurs to track revenue, manage listings, and build a permanent trust score with
               every completed sale.
             </p>
-            <a
-              href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/download"
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-semibold hover:bg-terra-light transition-colors"
             >
               Get the app <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

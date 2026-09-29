@@ -40,21 +40,12 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          {/* // TODO: replace with a real sign-in URL once the web portal exists */}
           <Link
-            to="#"
-            className="text-sm font-medium text-primary hover:text-terra-light transition-colors"
-          >
-            Sign in
-          </Link>
-          <a
-            href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
-            target="_blank"
-            rel="noopener noreferrer"
+            to="/download"
             className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-terra-light transition-colors"
           >
             Get the app
-          </a>
+          </Link>
         </div>
 
         <button
@@ -88,15 +79,13 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
-              <a
-                href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/download"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold mt-2"
               >
                 Get the app
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
