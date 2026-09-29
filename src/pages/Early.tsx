@@ -8,7 +8,7 @@ import SectionHeading from "@/components/SectionHeading";
 const features = [
   { icon: BarChart3, title: "Revenue analytics", description: "Track earnings, completed sales, pending deliveries, category breakdowns, and your top-selling category at a glance." },
   { icon: Store, title: "Trust-scored marketplace", description: "Sell to verified buyers and build a permanent trust score with every completed transaction." },
-  { icon: ShieldCheck, title: "Escrow-protected payments", description: "Money is held in escrow until delivery is confirmed — trade with confidence, without fear of scams." },
+  { icon: ShieldCheck, title: "Escrow-protected payments", description: "Money is held in escrow until delivery is confirmed. Trade with confidence, without fear of scams." },
   { icon: MessageSquare, title: "Community groups", description: "Ask questions, share advice, react, and vote on polls with other farmers in your area." },
 ];
 
@@ -31,7 +31,7 @@ export default function Early() {
               Grow your <span className="text-primary">agribusiness</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              A dashboard for agripreneurs — track revenue, manage listings, and build a permanent trust score with
+              A dashboard for agripreneurs to track revenue, manage listings, and build a permanent trust score with
               every completed sale.
             </p>
             <a

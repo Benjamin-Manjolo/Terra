@@ -52,7 +52,7 @@ export default function Footer() {
               Terra
             </Link>
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              Diagnose, treat, sell, and grow — all from your phone, all without internet.
+              Diagnose, treat, sell, and grow, all from your phone, all without internet.
             </p>
             <p className="text-sm text-primary-foreground/60 leading-relaxed mt-4">
               Contact us:{" "}

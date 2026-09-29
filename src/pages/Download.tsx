@@ -50,7 +50,7 @@ const installSteps = [
       "Tap Download for Android and save the APK to your phone.",
       "When prompted, allow installs from your browser (Settings → Allow from this source).",
       "Open the downloaded file and tap Install.",
-      "Launch Terra and sign in — or create a free account to start scanning.",
+      "Launch Terra and sign in, or create a free account to start scanning.",
     ],
   },
   {
@@ -59,7 +59,7 @@ const installSteps = [
       "Tap Request TestFlight access from your device.",
       "Install the TestFlight app from the App Store if you don't have it.",
       "Follow the invite link inside TestFlight and tap Install.",
-      "Open Terra — every feature works offline from that point on.",
+      "Open Terra. Every feature works offline from that point on.",
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Download() {
               Get Terra on your phone
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8">
-              Diagnose livestock, trade safely, and grow your agribusiness — every feature works offline, even in the
+              Diagnose livestock, trade safely, and grow your agribusiness. Every feature works offline, even in the
               middle of a village.
             </p>
             <a
@@ -309,7 +309,7 @@ export default function Download() {
           >
             <h2 className="text-3xl md:text-4xl font-display text-foreground mb-4">Need a hand installing?</h2>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              Browse our help center for answers, or reach our support team any time — day or night.
+              Browse our help center for answers, or reach our support team any time, day or night.
             </p>
             <Link
               to="/support"

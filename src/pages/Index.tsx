@@ -18,7 +18,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 const products = [
   { icon: Scan, title: "Terra Scan", description: "Point your camera at a cow. Get a breed and disease diagnosis in under 5 seconds, entirely offline. Powered by on-device TensorFlow Lite models." },
-  { icon: HeartPulse, title: "Terra Heal", description: "Every diagnosis comes with symptoms, treatment steps, first-aid protocols, and emergency vet contacts — in English or Chichewa." },
+  { icon: HeartPulse, title: "Terra Heal", description: "Every diagnosis comes with symptoms, treatment steps, first-aid protocols, and emergency vet contacts, in English or Chichewa." },
   { icon: ShoppingCart, title: "Terra Trade", description: "A trust-scored marketplace with escrow-protected payments. Sell your livestock to verified buyers without fear of scams." },
   { icon: Sprout, title: "Terra Grow", description: "An agripreneur dashboard with revenue analytics, pending deliveries, top-selling categories, and trust scores." },
   { icon: BookOpen, title: "Terra Learn", description: "Offline field guides, treatment manuals, business ideas, and value-added processing recipes. Knowledge that works in the middle of a village." },
@@ -61,7 +61,7 @@ export default function Index() {
               fair prices, and grow their agribusiness
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
-              Take a photo. Get a diagnosis. Get a treatment plan. Sell to a verified buyer — all from your phone, all
+              Take a photo. Get a diagnosis. Get a treatment plan. Sell to a verified buyer, all from your phone, all
               without internet.
             </p>
 
@@ -119,7 +119,7 @@ export default function Index() {
           <SectionHeading
             badge="A Better Way to Farm"
             title="Every tool a smallholder farmer needs, offline-first"
-            subtitle="Diagnose disease, follow treatment, trade safely, and grow your agribusiness — all from one phone app that works without internet."
+            subtitle="Diagnose disease, follow treatment, trade safely, and grow your agribusiness, all from one phone app that works without internet."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
@@ -184,7 +184,7 @@ export default function Index() {
               "I identified my cow's lumpy skin disease in 30 seconds without internet. The vet confirmed it the next
               day. Without Terra, I would have lost the cow."
             </blockquote>
-            <p className="text-primary-foreground/60 text-sm">— Chikondi B., smallholder farmer, Lilongwe (illustrative)</p>
+            <p className="text-primary-foreground/60 text-sm">Chikondi B., smallholder farmer, Lilongwe (illustrative)</p>
           </motion.div>
         </div>
       </section>

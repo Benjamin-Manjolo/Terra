@@ -48,7 +48,7 @@ export default function GrowthCalculator() {
           <h2 className="text-3xl md:text-5xl font-display text-foreground mb-4">See your herd grow</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             A healthier herd means more income. Use this herd-loss prevention estimator to see what early diagnosis
-            and treatment can save — all from your phone, with no internet in the field.
+            and treatment can save, all from your phone, with no internet in the field.
           </p>
         </div>
 
@@ -85,16 +85,6 @@ export default function GrowthCalculator() {
             <div className="h-[320px] md:h-[380px]">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={data}>
-                  <defs>
-                    <linearGradient id="terraGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="hsl(120, 100%, 33%)" stopOpacity={0.3} />
-                      <stop offset="100%" stopColor="hsl(120, 100%, 33%)" stopOpacity={0.02} />
-                    </linearGradient>
-                    <linearGradient id="leafGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="hsl(123, 13%, 69%)" stopOpacity={0.2} />
-                      <stop offset="100%" stopColor="hsl(123, 13%, 69%)" stopOpacity={0.02} />
-                    </linearGradient>
-                  </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(40, 20%, 90%)" />
                   <XAxis dataKey="year" tickFormatter={(v) => `Year ${v}`} tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" />
                   <YAxis tickFormatter={(v) => `${v}`} tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" />
@@ -103,14 +93,14 @@ export default function GrowthCalculator() {
                     labelFormatter={(l) => `Year ${l}`}
                     contentStyle={{ borderRadius: 12, border: "1px solid hsl(40, 20%, 90%)", fontSize: 13 }}
                   />
-                  <Area type="monotone" dataKey="withTerra" stroke="hsl(120, 100%, 33%)" fill="url(#terraGrad)" strokeWidth={2.5} />
-                  <Area type="monotone" dataKey="withoutTerra" stroke="hsl(123, 13%, 69%)" fill="url(#leafGrad)" strokeWidth={2} />
+                  <Area type="monotone" dataKey="withTerra" stroke="hsl(120, 100%, 33%)" fill="hsl(120, 100%, 33%)" fillOpacity={0.3} strokeWidth={2.5} />
+                  <Area type="monotone" dataKey="withoutTerra" stroke="hsl(123, 13%, 69%)" fill="hsl(123, 13%, 69%)" fillOpacity={0.25} strokeWidth={2} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
           </div>
           <p className="text-xs text-muted-foreground/70 mt-6 text-center">
-            Illustrative model for the marketing site — not real farm data. Replace these figures with your own before
+            Illustrative model for the marketing site, not real farm data. Replace these figures with your own before
             launch. Results vary by species, district, and disease; no outcome is guaranteed.
           </p>
         </div>

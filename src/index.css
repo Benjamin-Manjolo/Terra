@@ -73,12 +73,12 @@
     text-wrap: balance;
   }
   .gradient-terra {
-    background: linear-gradient(135deg, hsl(var(--terra)) 0%, hsl(var(--terra-light)) 100%);
+    background: hsl(var(--terra));
   }
   .gradient-leaf {
-    background: linear-gradient(135deg, hsl(var(--leaf)) 0%, hsl(var(--leaf-light)) 100%);
+    background: hsl(var(--leaf));
   }
   .gradient-hero {
-    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--cream-dark)) 100%);
+    background: hsl(var(--cream));
   }
 }

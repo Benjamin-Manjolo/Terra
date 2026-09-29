@@ -5,12 +5,12 @@ import SectionHeading from "@/components/SectionHeading";
 
 const articles = [
   { title: "Identifying Lumpy Skin Disease in Cattle", category: "Livestock Health", readTime: "5 min", excerpt: "Spot the early signs of lumpy skin disease on your herd and know what to do before a vet arrives." },
-  { title: "Foot and Mouth Disease: First-Aid Steps", category: "Livestock Health", readTime: "4 min", excerpt: "Symptoms, precautions, and first-aid actions for FMD — the treatment guide that works offline." },
+  { title: "Foot and Mouth Disease: First-Aid Steps", category: "Livestock Health", readTime: "4 min", excerpt: "Symptoms, precautions, and first-aid actions for FMD, the treatment guide that works offline." },
   { title: "Treating Mastitis Without a Vet", category: "Livestock Health", readTime: "6 min", excerpt: "Practical steps to manage mastitis with what you have on hand, and when to call an emergency contact." },
   { title: "A Guide to Anthrax Prevention", category: "Animal Health", readTime: "5 min", excerpt: "Human safety first. Understand anthrax risks and the safeguards to protect your family and herd." },
   { title: "Getting Started with Drought-Resistant Crops", category: "Crops", readTime: "6 min", excerpt: "Choose resilient crops and practices suited to districts with unreliable rainfall." },
   { title: "Value-Added Processing for Smallholders", category: "Agribusiness", readTime: "7 min", excerpt: "Turn raw produce into higher-value goods and earn more from every harvest." },
-  { title: "Pricing Your Livestock for the Marketplace", category: "Agribusiness", readTime: "4 min", excerpt: "Set fair prices that get you paid — and keep your buyers coming back." },
+  { title: "Pricing Your Livestock for the Marketplace", category: "Agribusiness", readTime: "4 min", excerpt: "Set fair prices that get you paid and keep your buyers coming back." },
   { title: "Building a Trust Score as a Seller", category: "Marketplace", readTime: "3 min", excerpt: "How every escrow-protected transaction boosts your reputation on Terra's marketplace." },
   { title: "Agripreneur Business Ideas in Malawi", category: "Agribusiness", readTime: "8 min", excerpt: "Low-capital ideas to go from subsistence to commercial farming, aligned with Malawi 2063." },
 ];
@@ -32,7 +32,7 @@ export default function Learn() {
           <SectionHeading
             badge="Learn"
             title="Field knowledge, simplified"
-            subtitle="Guides, manuals, and tips that work even in the middle of a village — downloadable for offline use."
+            subtitle="Guides, manuals, and tips that work even in the middle of a village, downloadable for offline use."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((a, i) => (

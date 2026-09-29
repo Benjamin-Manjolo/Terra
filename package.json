@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Terra — offline-first, AI-powered agricultural companion for Malawian smallholder farmers. Marketing website.",
+  "description": "Terra, an offline-first, AI-powered agricultural companion for Malawian smallholder farmers. Marketing website.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

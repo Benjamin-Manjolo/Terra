@@ -6,7 +6,7 @@ import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
 
 const features = [
-  { icon: Scan, title: "Breed & disease detection", description: "Photograph your cattle and get a breed ID and disease diagnosis in under 5 seconds — powered by on-device TensorFlow Lite models." },
+  { icon: Scan, title: "Breed & disease detection", description: "Photograph your cattle and get a breed ID and disease diagnosis in under 5 seconds, powered by on-device TensorFlow Lite models." },
   { icon: WifiOff, title: "Truly offline", description: "No signal? No problem. Everything runs on your phone and works in the middle of a village with zero internet." },
   { icon: Clock, title: "Answers in seconds", description: "Get results the moment you point the camera, with a Roboflow-hosted model for even higher accuracy when you're online." },
   { icon: Stethoscope, title: "Vet-ready insights", description: "Share the diagnosis with a vet or agronomist for confirmation, and keep a record of every animal you scan." },
@@ -31,7 +31,7 @@ export default function Invest() {
               Diagnose your livestock <span className="text-primary">in seconds</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Take a photo of your cow and get a breed identification and disease diagnosis in under 5 seconds —
+              Take a photo of your cow and get a breed identification and disease diagnosis in under 5 seconds,
               entirely offline, right on your phone.
             </p>
             <a
