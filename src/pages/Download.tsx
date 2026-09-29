@@ -1,8 +1,7 @@
-import { useState } from "react";
 import {
-  Apple,
   ArrowRight,
   Check,
+  Cpu,
   Database,
   Download as DownloadIcon,
   Smartphone,
@@ -13,31 +12,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 
-type OS = "android" | "ios" | "windows" | "macos" | "linux" | "other";
+const RELEASE_URL = "https://github.com/Benjamin-Manjolo/Terra/releases/tag/v1.0.1";
+const RELEASE_DOWNLOAD_URL = "https://github.com/Benjamin-Manjolo/Terra/releases/download/v1.0.1";
 
-const RELEASE_URL = "https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1";
-
-const platforms = [
+const apkBuilds = [
   {
-    id: "android" as const,
-    name: "Android",
+    id: "arm64-v8a",
+    name: "ARM64 (recommended)",
     icon: Smartphone,
     version: "v1.0.1",
-    size: "24 MB APK",
-    requirements: "Android 8.0 & up",
-    note: "Direct APK download that runs completely offline.",
-    href: RELEASE_URL,
+    size: "54.8 MB",
+    requirements: "Android 6.0+ (Marshmallow)",
+    note: "For most modern Android phones. This is the right choice for nearly every phone made in recent years.",
+    fileName: "app-arm64-v8a-release.apk",
+    href: `${RELEASE_DOWNLOAD_URL}/app-arm64-v8a-release.apk`,
     recommended: true,
   },
   {
-    id: "ios" as const,
-    name: "iOS",
-    icon: Apple,
+    id: "armeabi-v7a",
+    name: "32-bit ARM",
+    icon: Cpu,
     version: "v1.0.1",
-    size: "TestFlight beta",
-    requirements: "iOS 14 & up",
-    note: "Get an invite and install straight from TestFlight.",
-    href: "#download-ios",
+    size: "50.7 MB",
+    requirements: "Android 6.0+ (Marshmallow)",
+    note: "For older or entry-level Android phones that use a 32-bit ARM processor.",
+    fileName: "app-armeabi-v7a-release.apk",
+    href: `${RELEASE_DOWNLOAD_URL}/app-armeabi-v7a-release.apk`,
     recommended: false,
   },
 ];
@@ -46,27 +46,18 @@ const installSteps = [
   {
     platform: "Android",
     steps: [
-      "Tap Download for Android and save the APK to your phone.",
+      "Choose the APK that matches your phone, then tap its Download APK button.",
       "When prompted, allow installs from your browser (Settings → Allow from this source).",
       "Open the downloaded file and tap Install.",
-      "Launch Terra and sign in, or create a free account to start scanning.",
-    ],
-  },
-  {
-    platform: "iOS",
-    steps: [
-      "Tap Request TestFlight access from your device.",
-      "Install the TestFlight app from the App Store if you don't have it.",
-      "Follow the invite link inside TestFlight and tap Install.",
-      "Open Terra. Every feature works offline from that point on.",
+      "Open Terra. Its field guides and on-device diagnosis work without internet.",
     ],
   },
 ];
 
 const requirements = [
-  { icon: Smartphone, title: "Android", desc: "Android 8.0 (Oreo) or later on an ARM64 phone." },
-  { icon: Apple, title: "iOS", desc: "iOS 14 or later on iPhone or iPad." },
-  { icon: Database, title: "Storage", desc: "Around 120 MB of free space once installed." },
+  { icon: Smartphone, title: "Android version", desc: "Android 6.0 (Marshmallow) or later for every available APK." },
+  { icon: Cpu, title: "Phone type", desc: "Use ARM64 for most phones; use 32-bit ARM only for older devices." },
+  { icon: Database, title: "Storage", desc: "Keep at least 120 MB free for the app and its offline resources." },
   { icon: WifiOff, title: "Offline-first", desc: "No internet needed once the app is installed." },
 ];
 
@@ -77,21 +68,8 @@ const changelog = [
   "Bug fixes and stability improvements across the app.",
 ];
 
-function detectOS(): OS {
-  const ua = navigator.userAgent;
-  if (/android/i.test(ua)) return "android";
-  if (/iPad|iPhone|iPod/i.test(ua)) return "ios";
-  if (/Windows/i.test(ua)) return "windows";
-  if (/Macintosh|Mac OS/i.test(ua)) return "macos";
-  if (/Linux/i.test(ua)) return "linux";
-  return "other";
-}
-
 export default function Download() {
-  const [os] = useState<OS>(() => detectOS());
-
-  const primary = platforms.find((p) => p.id === (os === "ios" ? "ios" : "android"))!;
-  const primaryLabel = os === "ios" ? "Download for iOS" : "Download for Android";
+  const primary = apkBuilds[0];
 
   return (
     <div className="min-h-screen">
@@ -105,7 +83,7 @@ export default function Download() {
               Download Terra
             </span>
             <h1 className="text-4xl md:text-6xl font-display text-foreground leading-[1.1] mb-6 text-balance">
-              Get Terra on your phone
+              Get Terra for Android
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8">
               Diagnose livestock, trade safely, and grow your agribusiness. Every feature works offline, even in the
@@ -113,15 +91,14 @@ export default function Download() {
             </p>
             <a
               href={primary.href}
-              target={primary.href.startsWith("http") ? "_blank" : "_self"}
-              rel="noopener noreferrer"
+              download={primary.fileName}
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
             >
               <DownloadIcon className="w-5 h-5" />
-              {primaryLabel}
+              Download for most phones
               <ArrowRight className="w-4 h-4" />
             </a>
-            <p className="text-sm text-muted-foreground mt-4">Free to start · v1.0.1 · Works offline</p>
+            <p className="text-sm text-muted-foreground mt-4">Free direct download · v1.0.1 · Requires Android 6.0+</p>
           </div>
         </div>
       </section>
@@ -130,31 +107,23 @@ export default function Download() {
       <section className="py-20 md:py-28">
         <div className="container">
           <SectionHeading
-            badge="All Platforms"
-            title="Download for your device"
-            subtitle="Pick the version for your phone. Everything stays on your device and runs with zero internet."
+            badge="Choose your APK"
+            title="Know which download your Android needs"
+            subtitle="Every build requires Android 6.0 (Marshmallow) or newer. Start with ARM64 unless you know your phone is an older 32-bit model."
           />
-          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {platforms.map((p) => {
-              const isActive = os === p.id;
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {apkBuilds.map((p) => {
               return (
                 <div
                   key={p.id}
-                  className={`bg-card rounded-2xl p-8 border border-border flex flex-col transition-shadow hover:shadow-lg ${
-                    isActive ? "ring-2 ring-leaf shadow-xl" : ""
-                  }`}
+                  className={`bg-card rounded-2xl p-8 border border-border flex flex-col transition-shadow hover:shadow-lg ${p.recommended ? "ring-2 ring-leaf shadow-xl" : ""}`}
                 >
                   <div className="flex items-start justify-between mb-5">
                     <div className="w-12 h-12 rounded-xl gradient-terra flex items-center justify-center">
                       <p.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div className="flex items-center">
-                      {isActive && (
-                        <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
-                          <Check className="w-3 h-3" /> Your device
-                        </span>
-                      )}
-                      {p.recommended && !isActive && (
+                      {p.recommended && (
                         <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
                           Recommended
                         </span>
@@ -176,14 +145,19 @@ export default function Download() {
                       <dt className="text-muted-foreground">Requires</dt>
                       <dd className="font-semibold text-foreground">{p.requirements}</dd>
                     </div>
+                    {p.fileName && (
+                      <div className="pt-2 border-t border-border">
+                        <dt className="text-muted-foreground mb-1">APK file</dt>
+                        <dd className="font-mono text-xs text-foreground break-all">{p.fileName}</dd>
+                      </div>
+                    )}
                   </dl>
                   <a
                     href={p.href}
-                    target={p.href.startsWith("http") ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-terra-light transition-colors mt-auto"
+                    download={p.fileName}
+                    className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors mt-auto bg-primary text-primary-foreground hover:bg-terra-light"
                   >
-                    <DownloadIcon className="w-4 h-4" /> Download
+                    <DownloadIcon className="w-4 h-4" /> Download APK
                   </a>
                 </div>
               );
@@ -225,8 +199,8 @@ export default function Download() {
         <div className="container">
           <SectionHeading
             badge="Requirements"
-            title="Works on almost any phone"
-            subtitle="Terra is lightweight and built for low-end devices used across rural Malawi."
+            title="Android requirements at a glance"
+            subtitle="Terra is designed for low-end devices used across rural Malawi, while still making its Android version requirement clear."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {requirements.map((r) => (
