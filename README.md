@@ -32,14 +32,3 @@ npm run preview    # preview the production build
 npm run lint       # eslint
 npm run test       # vitest
 ```
-
-## TODOs before launch
-
-See `// TODO:` / `// PLACEHOLDER:` comments across `index.html`, `src/components/Navbar.tsx`, `src/pages/Index.tsx`, `src/pages/Invest.tsx`, `src/pages/Early.tsx`:
-
-- Replace all `#` app-store links with real Play Store / App Store URLs.
-- Replace OG/Twitter social share image `https://example.com/terra-og.png` with a real hosted image.
-- Replace `@terraapp` social handle with the real Terra handle.
-- Replace illustrative figures in the herd-loss estimator and hero stats with your own data.
-- Replace the illustrative beta testimonial (Chikondi B.) with a real farmer quote once you have permission.
-- Set up the Firebase project ID in `.firebaserc` for hosting deploys.
