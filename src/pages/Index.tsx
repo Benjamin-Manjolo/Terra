@@ -57,8 +57,7 @@ export default function Index() {
             </motion.div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-foreground leading-[1.1] mb-6">
-              Say Hello to Terra: An offline-first AI companion that helps farmers diagnose livestock disease, sell at
-              fair prices, and grow their agribusiness
+              Welcome to Terra.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
               Take a photo. Get a diagnosis. Get a treatment plan. Sell to a verified buyer, all from your phone, all
