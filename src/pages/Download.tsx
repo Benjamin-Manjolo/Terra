@@ -91,8 +91,7 @@ export default function Download() {
             </p>
             <a
               href={primary.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              download={primary.fileName}
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
             >
               <DownloadIcon className="w-5 h-5" />
@@ -155,8 +154,7 @@ export default function Download() {
                   </dl>
                   <a
                     href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download={p.fileName}
                     className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors mt-auto bg-primary text-primary-foreground hover:bg-terra-light"
                   >
                     <DownloadIcon className="w-4 h-4" /> Download APK
