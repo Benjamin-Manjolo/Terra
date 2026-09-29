@@ -67,12 +67,6 @@ export default function Index() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                to="/download"
-                className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
-              >
-                Get the app <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
                 to="/learn"
                 className="inline-flex items-center gap-2 rounded-full bg-card text-foreground border border-border px-8 py-4 text-base font-semibold hover:bg-secondary transition-colors"
               >

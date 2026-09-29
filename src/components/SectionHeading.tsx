@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 interface SectionHeadingProps {
   badge?: string;
   title: string;
@@ -8,13 +6,7 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({ badge, title, subtitle }: SectionHeadingProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="text-center mb-12 md:mb-16"
-    >
+    <div className="text-center mb-12 md:mb-16">
       {badge && (
         <span className="inline-block text-xs font-semibold tracking-wider uppercase text-accent bg-accent/10 px-4 py-1.5 rounded-full mb-4">
           {badge}
@@ -24,6 +16,6 @@ export default function SectionHeading({ badge, title, subtitle }: SectionHeadin
       {subtitle && (
         <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg leading-relaxed">{subtitle}</p>
       )}
-    </motion.div>
+    </div>
   );
 }

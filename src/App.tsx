@@ -5,16 +5,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-// Keep route code out of the initial bundle. In particular, the home page's
-// charting dependency is expensive on lower-powered phones and was making
-// navigation to Download feel like the tab had frozen.
+// Keep route code out of the initial bundle. The home page's charting
+// dependency is expensive on lower-powered phones.
 const Index = lazy(() => import("./pages/Index.tsx"));
 const Pricing = lazy(() => import("./pages/Pricing.tsx"));
 const Invest = lazy(() => import("./pages/Invest.tsx"));
 const Early = lazy(() => import("./pages/Early.tsx"));
 const Learn = lazy(() => import("./pages/Learn.tsx"));
 const Support = lazy(() => import("./pages/Support.tsx"));
-const Download = lazy(() => import("./pages/Download.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -39,7 +37,6 @@ const App = () => (
             <Route path="/early" element={<Early />} />
             <Route path="/learn" element={<Learn />} />
             <Route path="/support" element={<Support />} />
-            <Route path="/download" element={<Download />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
