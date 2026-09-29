@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Scan, WifiOff, Clock, Stethoscope, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
@@ -35,13 +34,14 @@ export default function Invest() {
               Take a photo of your cow and get a breed identification and disease diagnosis in under 5 seconds —
               entirely offline, right on your phone.
             </p>
-            {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
-            <Link
-              to="#"
+            <a
+              href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-semibold hover:bg-terra-light transition-colors"
             >
               Get the app <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

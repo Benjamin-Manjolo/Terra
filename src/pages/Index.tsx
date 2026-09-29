@@ -66,13 +66,14 @@ export default function Index() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
-              <Link
-                to="#"
+              <a
+                href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
               >
                 Get the app <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
               <Link
                 to="/learn"
                 className="inline-flex items-center gap-2 rounded-full bg-card text-foreground border border-border px-8 py-4 text-base font-semibold hover:bg-secondary transition-colors"

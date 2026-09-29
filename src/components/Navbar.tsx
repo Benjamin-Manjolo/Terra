@@ -46,13 +46,14 @@ export default function Navbar() {
           >
             Sign in
           </Link>
-          {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
-          <Link
-            to="#"
+          <a
+            href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-terra-light transition-colors"
           >
             Get the app
-          </Link>
+          </a>
         </div>
 
         <button
@@ -86,14 +87,15 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
-              {/* // TODO: replace '#' with the Play Store / App Store URL before launch */}
-              <Link
-                to="#"
+              <a
+                href="https://github.com/Benjamin-Manjolo/oakly-invest/releases/tag/v1.0.1"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold mt-2"
               >
                 Get the app
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
