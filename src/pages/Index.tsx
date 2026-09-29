@@ -8,7 +8,6 @@ import {
   BookOpen,
   Shield,
   ArrowRight,
-  Star,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -39,16 +38,6 @@ export default function Index() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6"
-            >
-              <Star className="w-4 h-4 fill-leaf text-leaf" />
-              Rated #1 offline AI companion for Malawian farmers
-            </motion.div>
-
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-foreground leading-[1.1] mb-6">
               Welcome to Terra.
             </h1>
