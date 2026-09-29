@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Apple,
   ArrowRight,
   Check,
   Database,
-  Download,
+  Download as DownloadIcon,
   Smartphone,
   WifiOff,
 } from "lucide-react";
@@ -101,12 +100,7 @@ export default function Download() {
       {/* Hero */}
       <section className="gradient-hero pt-28 md:pt-36 pb-20 md:pb-28">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-2xl mx-auto text-center"
-          >
+          <div className="max-w-2xl mx-auto text-center">
             <span className="inline-block text-xs font-semibold tracking-wider uppercase text-accent bg-accent/10 px-4 py-1.5 rounded-full mb-4">
               Download Terra
             </span>
@@ -123,12 +117,12 @@ export default function Download() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-semibold hover:bg-terra-light transition-colors"
             >
-              <Download className="w-5 h-5" />
+              <DownloadIcon className="w-5 h-5" />
               {primaryLabel}
               <ArrowRight className="w-4 h-4" />
             </a>
             <p className="text-sm text-muted-foreground mt-4">Free to start · v1.0.1 · Works offline</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -141,15 +135,11 @@ export default function Download() {
             subtitle="Pick the version for your phone. Everything stays on your device and runs with zero internet."
           />
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {platforms.map((p, i) => {
+            {platforms.map((p) => {
               const isActive = os === p.id;
               return (
-                <motion.div
+                <div
                   key={p.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className={`bg-card rounded-2xl p-8 border border-border flex flex-col transition-shadow hover:shadow-lg ${
                     isActive ? "ring-2 ring-leaf shadow-xl" : ""
                   }`}
@@ -193,9 +183,9 @@ export default function Download() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-terra-light transition-colors mt-auto"
                   >
-                    <Download className="w-4 h-4" /> Download
+                    <DownloadIcon className="w-4 h-4" /> Download
                   </a>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -206,13 +196,9 @@ export default function Download() {
         <div className="container max-w-4xl">
           <SectionHeading badge="Installation" title="Up and running in minutes" />
           <div className="space-y-6">
-            {installSteps.map((g, i) => (
-              <motion.div
+            {installSteps.map((g) => (
+              <div
                 key={g.platform}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card border border-border rounded-3xl p-8 md:p-10"
               >
                 <h3 className="font-display text-2xl text-foreground mb-6">
@@ -228,7 +214,7 @@ export default function Download() {
                     </li>
                   ))}
                 </ol>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -243,13 +229,9 @@ export default function Download() {
             subtitle="Terra is lightweight and built for low-end devices used across rural Malawi."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {requirements.map((r, i) => (
-              <motion.div
+            {requirements.map((r) => (
+              <div
                 key={r.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card rounded-2xl p-6 border border-border hover:shadow-lg transition-shadow text-center"
               >
                 <div className="w-12 h-12 rounded-xl gradient-terra flex items-center justify-center mx-auto mb-4">
@@ -257,7 +239,7 @@ export default function Download() {
                 </div>
                 <h3 className="font-display text-lg text-foreground mb-2">{r.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -267,13 +249,7 @@ export default function Download() {
       <section className="py-20 md:py-28 bg-secondary/50">
         <div className="container max-w-3xl">
           <SectionHeading badge="What's New" title="Changelog" subtitle="Highlights from the latest release." />
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-card border border-border rounded-3xl p-8 md:p-10"
-          >
+          <div className="bg-card border border-border rounded-3xl p-8 md:p-10">
             <h3 className="font-display text-xl text-foreground mb-2">v1.0.1</h3>
             <p className="text-sm text-muted-foreground mb-6">
               Latest release · Full notes on{" "}
@@ -294,19 +270,13 @@ export default function Download() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         </div>
       </section>
       {/* CTA */}
       <section className="py-20 md:py-28">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-card border border-border rounded-3xl p-10 md:p-16 text-center max-w-3xl mx-auto"
-          >
+          <div className="bg-card border border-border rounded-3xl p-10 md:p-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-display text-foreground mb-4">Need a hand installing?</h2>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
               Browse our help center for answers, or reach our support team any time, day or night.
@@ -317,7 +287,7 @@ export default function Download() {
             >
               Visit the Help Center <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
